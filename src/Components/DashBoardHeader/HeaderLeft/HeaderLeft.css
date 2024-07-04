@@ -1,0 +1,30 @@
+.inner-header-components-left {
+    width: 350px;
+    min-width: 50px;
+    overflow: scroll;
+}
+.sidebar-items{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.sideBarItem-child{
+    display: flex;
+    flex-direction: column;
+    margin-top : 0.5rem;
+    margin-bottom : 0.5rem;
+}
+.sideBarItem-child-items{
+    margin-left: 0.5rem;
+    margin-top : 0.5rem;
+}
+.sideBarItems-routes{
+    margin-bottom : 0.5rem;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.sideBarItems-routes:hover{
+    background-color: bisque;
+    color: black;
+}
