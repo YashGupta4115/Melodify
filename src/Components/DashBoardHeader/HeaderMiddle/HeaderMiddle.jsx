@@ -14,16 +14,18 @@ import Downloads from "../../../routes/MyMusic/Downloads/Downloads";
 import TopCharts from "../../../routes/Playlists/TopCharts/TopCharts";
 import LastestReleases from "../../../routes/Playlists/LastestRelease/LastestReleases";
 import ArtistsAll from "../../../routes/Playlists/ArtistsAll/ArtistsAll";
+import AlbumTracks from "../../../routes/AlbumTracks/AlbumTracks";
 
 const HeaderMiddle = () => {
   const refHeaderMiddle = useRef(null);
   const [width, setWidth] = useState(58);
-  const { shift } = useContextCon();
+  const { shift, setMainWidth } = useContextCon();
 
   useEffect(() => {
     const conputedStyle = getComputedStyle(refHeaderMiddle.current);
     setWidth(parseInt(conputedStyle.width) - shift);
-  }, [shift]);
+    setMainWidth(parseInt(conputedStyle.width) - shift);
+  }, [shift, setMainWidth]);
   return (
     <div
       ref={refHeaderMiddle}
@@ -45,7 +47,6 @@ const HeaderMiddle = () => {
           <Route path="/my-music/history" element={<History />} />
           <Route path="/my-music/downloads" element={<Downloads />} />
         </Route>
-
         <Route path="/playlists">
           <Route path="/playlists/top-charts" element={<TopCharts />} />
           <Route
@@ -53,6 +54,7 @@ const HeaderMiddle = () => {
             element={<LastestReleases />}
           />
           <Route path="/playlists/all-artists" element={<ArtistsAll />} />
+          <Route path="/playlists/:albumId" element={<AlbumTracks />} />
         </Route>
       </Routes>
     </div>

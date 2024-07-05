@@ -26,7 +26,7 @@ const HeaderLeft = () => {
       <div className="sidebar-items">
         {Object.keys(SideBarOptions).map((key) => {
           return (
-            <div key={key} className="sideBarItem-child">
+            <div key={key.id} className="sideBarItem-child">
               <span className="sideBarItem-Child-title">{key}</span>
               <div className="sideBarItem-child-items">
                 {SideBarOptions[key].map((child) => {

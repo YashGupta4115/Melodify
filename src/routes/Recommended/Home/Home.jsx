@@ -1,21 +1,16 @@
 import React from "react";
 import Albums from "../../../Components/Albums/Albums";
 // import { useGetTracksQuery } from "../../../Reducer/spotifyCore";
-import { bollywoodAlbums } from "../../../Assests/data/data.js";
+import { albums } from "../../../Assests/data/data.js";
+import "./Home.css";
 
 const Home = () => {
   // const { data, isFetching, error } = useGetTracksQuery();
   return (
     <div className="home-container">
       <div className="albums-container">
-        {Object.keys(bollywoodAlbums).map((album) => {
-          return (
-            <div key={album}>
-              <span>{album}</span>
-              <Albums album={bollywoodAlbums[album]} />
-            </div>
-          );
-        })}
+        <Albums title={"Bollywood"} albums={albums} />
+        <Albums title={"Bollywood"} albums={albums} />
       </div>
     </div>
   );

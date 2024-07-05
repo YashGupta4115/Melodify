@@ -16,6 +16,7 @@
 .inner-header-components-middle {
     width: 58%;
     min-width: 600px;
+    min-width: 600px;
     overflow: scroll;
 }
 

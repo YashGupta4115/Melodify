@@ -62,7 +62,7 @@ const DashBoardHeader = () => {
       ></div>
       <HeaderMiddle />
       <div className="slider"></div>
-      {true && <HeaderRight />}
+      {false && <HeaderRight />}
     </div>
   );
 };

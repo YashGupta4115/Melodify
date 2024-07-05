@@ -1,0 +1,25 @@
+.individual-track {
+    display: flex;
+    flex-direction: row;
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+
+.track-info {
+    margin: 1rem 0.5rem 1rem 0.5rem;
+    width: 160px;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.track-descp {
+    margin-left: 0.5rem;
+}
+
+.track-image {
+    width: 160px;
+    height: 180px;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+}

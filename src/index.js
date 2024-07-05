@@ -7,13 +7,16 @@ import { ContextProvider } from './Context/context';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './Reducer/Store';
+import PlayerContextProvider from './Context/playerContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <Provider store={store}>
   <BrowserRouter>
   <ContextProvider>
+    <PlayerContextProvider>
     <App />
+    </PlayerContextProvider>
   </ContextProvider>
   </BrowserRouter>
   // </Provider>
