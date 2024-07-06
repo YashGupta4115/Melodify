@@ -1,20 +1,20 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import "./DashBoard.css";
 import DashBoardHeader from "../../Components/DashBoardHeader/DashBoardHeader";
 import DashBoardFooter from "../../Components/DashBoardFooter/DashBoardFooter";
 import { PlayerContext } from "../../Context/playerContext";
-import sampleTrack from "../../Assests/Husn - Anuv Jain.mp3";
 
 const DashBoard = () => {
-  const { audioRef, track, setTrack } = useContext(PlayerContext);
-  useEffect(() => {
-    setTrack(sampleTrack);
-  });
+  const { audioRef, track } = useContext(PlayerContext);
   return (
     <div className="DashBoard-container" style={{ height: "100vh" }}>
       <DashBoardHeader />
       <DashBoardFooter />
-      <audio ref={audioRef} src={track} preload="auto"></audio>
+      <audio
+        ref={audioRef}
+        src={track.track}
+        // preload="auto"
+      ></audio>
     </div>
   );
 };

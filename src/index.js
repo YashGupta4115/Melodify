@@ -5,8 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ContextProvider } from './Context/context';
 import { BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { store } from './Reducer/Store';
+// import { Provider } from 'react-redux';
+// import { store } from './Reducer/Store';
 import PlayerContextProvider from './Context/playerContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

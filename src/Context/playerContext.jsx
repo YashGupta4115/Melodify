@@ -1,4 +1,4 @@
-import { createContext, useRef, useState } from "react";
+import { createContext, useEffect, useRef, useState } from "react";
 
 export const PlayerContext = createContext();
 
@@ -8,8 +8,8 @@ const PlayerContextProvider = (props) => {
   const seekBgRef = useRef(null);
 
   const defaultTrack = {
-    title: "null",
-    artist: "null",
+    title: "-",
+    artist: "-",
     trackImage: "",
     album: "",
     addTrackVisible: true,
@@ -36,6 +36,23 @@ const PlayerContextProvider = (props) => {
     audioRef.current.pause();
     setPlayStatus(false);
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      audioRef.current.ontimeupdate = () => {
+        setTime({
+          currentTime: {
+            seconds: Math.floor(audioRef.current.currentTime % 60),
+            minute: Math.floor(audioRef.current.currentTime / 60),
+          },
+          totalTime: {
+            seconds: Math.floor(audioRef.current.duration % 60),
+            minute: Math.floor(audioRef.current.duration / 60),
+          },
+        });
+      };
+    }, 1000);
+  }, [setTime, track, audioRef]);
 
   const contextValue = {
     audioRef,

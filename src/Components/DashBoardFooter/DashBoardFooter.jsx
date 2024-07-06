@@ -45,7 +45,7 @@ export const TrackTitleAuthor = ({
 };
 
 const DashBoardFooter = () => {
-  const { seekBgRef, seekBarRef, playStatus, play, pause, track } =
+  const { seekBgRef, seekBarRef, playStatus, play, pause, track, time } =
     useContext(PlayerContext);
   return (
     <div className="DashBoard-footer">
@@ -78,11 +78,11 @@ const DashBoardFooter = () => {
           <TiArrowLoop className="footer-icons" />
         </div>
         <div className="player-seekbar">
-          <span className="runningTime">00.00</span>
+          <span className="runningTime">{`${time.currentTime.minute}:${time.currentTime.seconds}`}</span>
           <div ref={seekBgRef} className="seekbar">
             <hr ref={seekBarRef} className="seekbar-track" />
           </div>
-          <span className="stoppingTime">00.00</span>
+          <span className="stoppingTime">{`${time.totalTime.minute}:${time.totalTime.seconds}`}</span>
         </div>
       </div>
 
